@@ -1,0 +1,175 @@
+#starGame {
+  max-height: 400px;
+}
+#start-game {
+  width: 20%;
+  padding: 10px;
+  background: green;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  z-index: 100;
+  color: white;
+  display: none;
+  .show {
+    display: inline-block !important;
+  }
+}
+#gameOver {
+  display: none;
+  position: absolute;
+  width: 30%;
+  padding: 5px;
+  top: 20%;
+  left: 5%;
+  text-align: center;
+  z-index: 100;
+  color: orange;
+  text-align: center;
+  .show {
+    display: inline-block !important;
+  }
+  .score {
+    color: blue;
+    font-size: 20px;
+  }
+}
+#answer {
+  width: 40%;
+  margin: 20px 20px;
+  text-align: center;
+  input {
+    width: 60%;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+  }
+}
+.tick {
+  color: green;
+  font-size: 20px;
+  font-weight:bold;
+}
+.correct{
+  color: green;
+  font-weight:bold;
+  border: 1px solid green;
+  font-size: 14px;
+}
+.tick::after {
+  content: "\2713 ";
+  margin-left: 20px;
+    transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+}
+.progress-bar {
+  background-color: #efefef;
+  border-radius: 3px;
+  height: 10px;
+  width: 40%;
+  overflow: visible;
+  margin: 25px 0;
+  .progress-value {
+    background-color: green;
+    height: 10px;
+  }
+}
+#points{
+  padding: 1px 18px;
+  border-radius: 30px;
+  color: white;
+  background: green;
+  width: 1%;
+  position: absolute;
+  top: 28px;
+}
+#score {
+  span {
+    color: black;
+    font-size: 16px;
+  }
+  width: 40%;
+  text-align: right;
+  color: blue;
+  font-weight: 600;
+}
+#starttable {
+  border: 2px solid white;
+  width: 40%;
+  height: 400px;
+  overflow: hidden;
+  border:1px solid grey;
+  img {
+    margin: auto;
+    display: block;
+
+    zoom: 2;  //increase if you have very small images
+    display: block;
+    margin: auto;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+  }
+  #counters {
+    background: grey;
+    width: calc(40%/3);
+    height: calc(400px/2);
+    z-index: 99;
+    position: fixed;
+  }
+  .one {
+    display: none;
+  }
+  .two {
+    left: calc(40%/3);
+    display: none;
+  }
+  .three {
+    left: calc(80%/3);
+    display: none;
+  }
+  .four {
+    top: calc(66%/2);
+    display: none;
+  }
+  .five {
+    top: calc(66%/2);
+    left: calc(40%/3);
+    display: none;
+  }
+  .six {
+    top: calc(66%/2);
+    left: calc(80%/3);
+    display: none;
+  }
+}
+#next-lvl {
+  display: none;
+  width : 40%;
+  text-align: center;
+  button {
+    background : rgba(green, 0.6);
+    padding: 12px 8px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 60%;
+    vertical-alignt: top;
+    font-size: 20px;
+    span {
+      margin-left: 10%;
+      font-size: 20px;
+      font-weight: 500;
+      vertical-alignt: top;
+    }
+  }
+}
+.show {
+  display: inline-block !important;
+}
+.hide {
+  display: none !important;
+}

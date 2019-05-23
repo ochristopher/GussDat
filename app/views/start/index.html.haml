@@ -1,0 +1,40 @@
+#starGame
+  / %h4 start
+  #score
+    %span Score
+    {{ score }}
+  .progress-bar
+    #points
+      %p {{ points }}
+    .progress-value.value{"v-bind:style" => "{ width: progs + '%'}"}
+
+  #gameOver{"v-bind:class" => "[{ show: game_over }]"}
+    %h3 ... Finished ...
+    .score
+      {{ score }} points
+
+  %button#start-game{"v-on:click" => "startGame", "v-bind:class" => "[{ show: start_game }]"}
+    Play
+
+  #starttable
+    #counters.one{"v-bind:class" => "[{ show: one }]"}
+    #counters.two{"v-bind:class" => "[{ show: two }]"}
+    #counters.three{"v-bind:class" => "[{ show: three }]"}
+    #counters.four{"v-bind:class" => "[{ show: four }]"}
+    #counters.five{"v-bind:class" => "[{ show: five }]"}
+    #counters.six{"v-bind:class" => "[{ show: six }]"}
+
+    / %img{"src" => "#{image_path("ques/jonah.jpg")}"}
+    / %img{"v-bind:src" => gameImage}
+    %img{"v-bind:src" => "gameImage"}
+
+
+  #answer{"v-bind:class" => "[{ tick: correctInput }, {hide: start_game }]"}
+    %input#answerInput{:type => "text", "v-model" => "answer", "v-on:input" => "checkAnswer", "v-bind:class" => "[{ correct: correctInput }]"}
+  #next-lvl{"v-bind:class" => "[{ show: correctInput }]"}
+    %button{"v-on:click" => "nextRun", "v-bind:class" => "[{ show: next }]"}
+      Next
+      %span >
+
+  / %img{"v-bind:src" => "gameImage"}
+  / http://localhost:9000/assets/ques/jonah-fee9f90e4efb05753ea1cdffa480fd3d7d75be6e0a75e5889b36047a2134799a.jpg
